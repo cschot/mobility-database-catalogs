@@ -1,5 +1,20 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+from tools.operations import (
+    ALL,
+    add_gtfs_realtime_source,
+    update_gtfs_realtime_source,
+    add_gtfs_schedule_source,
+    update_gtfs_schedule_source,
+    get_sources,
+    get_sources_by_bounding_box,
+    get_sources_by_subdivision_name,
+    get_sources_by_country_code,
+    get_latest_datasets,
+    get_sources_by_feature,
+    get_sources_by_status,
+    CATALOGS,
+)
 
 name: Python application
 
@@ -26,8 +41,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8 pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install flake8
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
