@@ -8,5 +8,6 @@ def test_catalogs_sources_gtfs_schedule_source_ids_uniqueness():
     )
     file_path = "catalogs/sources/gtfs/schedule/fr-ile-de-france-star-gtfs-1159.json"
     contents = Path(file_path).read_text()
-    print(contents)
+    with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as f :
+        print("Bestandsinhoud:" + contents, file=f)
     assert 1
