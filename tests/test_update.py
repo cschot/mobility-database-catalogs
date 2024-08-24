@@ -1,5 +1,8 @@
 import os
-from tools.operations import update_gtfs_schedule_source
+from tools.operations import (
+    update_gtfs_schedule_source,
+    update_gtfs_realtime_source,
+)
 from pathlib import Path
 
 def test_catalogs_sources_gtfs_schedule_source_ids_uniqueness():
