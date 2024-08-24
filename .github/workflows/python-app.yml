@@ -27,4 +27,4 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Integration tests with pytest
         run: |
-          pytest -v ./tests/test_update.py --html=mobility-catalogs-integration-tests-report.html --self-contained-html
+          pytest -v ./tests/test_update.py
