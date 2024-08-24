@@ -6,7 +6,7 @@ def test_catalogs_sources_gtfs_schedule_source_ids_uniqueness():
         mdb_source_id=1159,
         provider="testSTER",
     )
-    filepath = "catalogs/sources/gtfs/schedule/fr-ile-de-france-star-gtfs-1159.json"
+    file_path = "catalogs/sources/gtfs/schedule/fr-ile-de-france-star-gtfs-1159.json"
     contents = Path(file_path).read_text()
     print(contents)
     assert 1
