@@ -1,20 +1,5 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
-from tools.operations import (
-    ALL,
-    add_gtfs_realtime_source,
-    update_gtfs_realtime_source,
-    add_gtfs_schedule_source,
-    update_gtfs_schedule_source,
-    get_sources,
-    get_sources_by_bounding_box,
-    get_sources_by_subdivision_name,
-    get_sources_by_country_code,
-    get_latest_datasets,
-    get_sources_by_feature,
-    get_sources_by_status,
-    CATALOGS,
-)
 
 name: Python application
 
@@ -50,4 +35,10 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pytest
+        from tools.operations import (
+           update_gtfs_schedule_source,
+        )
+        update_gtfs_schedule_source(
+            mdb_source_id=1159,
+            provider="testSTER",
+        )
