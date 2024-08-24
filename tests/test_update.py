@@ -5,3 +5,4 @@ def test_catalogs_sources_gtfs_schedule_source_ids_uniqueness():
         mdb_source_id=1159,
         provider="testSTER",
     )
+    assert 1
